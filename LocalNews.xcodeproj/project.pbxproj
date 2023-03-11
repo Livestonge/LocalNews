@@ -14,6 +14,12 @@
 		E8F311A729BBCCE000F48F0C /* LocalNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F311A629BBCCE000F48F0C /* LocalNewsTests.swift */; };
 		E8F311B129BBCCE000F48F0C /* LocalNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F311B029BBCCE000F48F0C /* LocalNewsUITests.swift */; };
 		E8F311B329BBCCE000F48F0C /* LocalNewsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F311B229BBCCE000F48F0C /* LocalNewsUITestsLaunchTests.swift */; };
+		E8F311C029BBD21700F48F0C /* NewsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F311BF29BBD21700F48F0C /* NewsRow.swift */; };
+		E8F311C229BC73B500F48F0C /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F311C129BC73B500F48F0C /* EmptyView.swift */; };
+		E8F311C429BC769200F48F0C /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F311C329BC769200F48F0C /* NewsView.swift */; };
+		E8F311C629BDDAB700F48F0C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F311C529BDDAB700F48F0C /* ImageView.swift */; };
+		E8F311C829BDDFC400F48F0C /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F311C729BDDFC400F48F0C /* Article.swift */; };
+		E8F311CA29BDE13800F48F0C /* Headline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F311C929BDE13800F48F0C /* Headline.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		E8F311AC29BBCCE000F48F0C /* LocalNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F311B029BBCCE000F48F0C /* LocalNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNewsUITests.swift; sourceTree = "<group>"; };
 		E8F311B229BBCCE000F48F0C /* LocalNewsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNewsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E8F311BF29BBD21700F48F0C /* NewsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRow.swift; sourceTree = "<group>"; };
+		E8F311C129BC73B500F48F0C /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		E8F311C329BC769200F48F0C /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
+		E8F311C529BDDAB700F48F0C /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		E8F311C729BDDFC400F48F0C /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		E8F311C929BDE13800F48F0C /* Headline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headline.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,12 @@
 			children = (
 				E8F3119529BBCCDF00F48F0C /* LocalNewsApp.swift */,
 				E8F3119729BBCCDF00F48F0C /* ContentView.swift */,
+				E8F311BF29BBD21700F48F0C /* NewsRow.swift */,
+				E8F311C329BC769200F48F0C /* NewsView.swift */,
+				E8F311C529BDDAB700F48F0C /* ImageView.swift */,
+				E8F311C129BC73B500F48F0C /* EmptyView.swift */,
+				E8F311C729BDDFC400F48F0C /* Article.swift */,
+				E8F311C929BDE13800F48F0C /* Headline.swift */,
 				E8F3119929BBCCE000F48F0C /* Assets.xcassets */,
 				E8F3119B29BBCCE000F48F0C /* Preview Content */,
 			);
@@ -257,7 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8F311C829BDDFC400F48F0C /* Article.swift in Sources */,
+				E8F311C629BDDAB700F48F0C /* ImageView.swift in Sources */,
+				E8F311C229BC73B500F48F0C /* EmptyView.swift in Sources */,
+				E8F311CA29BDE13800F48F0C /* Headline.swift in Sources */,
 				E8F3119829BBCCDF00F48F0C /* ContentView.swift in Sources */,
+				E8F311C029BBD21700F48F0C /* NewsRow.swift in Sources */,
+				E8F311C429BC769200F48F0C /* NewsView.swift in Sources */,
 				E8F3119629BBCCDF00F48F0C /* LocalNewsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

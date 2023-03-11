@@ -2,13 +2,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+            NavigationStack {
+                List(0..<5) { _ in
+                    NavigationLink(
+                        destination: NewsView(
+                            article: .mock
+                        )
+                    ) {
+                        NewsRow()
+                    }
+                }
+            }
     }
 }
 
