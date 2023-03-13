@@ -1,17 +1,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: ViewModel
+    
     var body: some View {
             NavigationStack {
-                List(0..<5) { _ in
+                List(viewModel.headlines) {  headline in
                     NavigationLink(
                         destination: NewsView(
-                            article: .mock
+                            article: headline.article
                         )
                     ) {
-                        NewsRow()
+                        NewsRow(headline: headline)
                     }
                 }
+            }
+            .alert(
+                viewModel.errorMessage,
+                isPresented: $viewModel.errorDidOccurr
+            ) {
+                Button("OK", role: .cancel) {}
+            }
+            .onAppear {
+               viewModel.fetchHeadlines()
             }
     }
 }
@@ -19,5 +30,16 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(
+                ViewModel(
+                    useCase: NewsUseCase(
+                        fetchNewsRepository: FetchNewsRepository(
+                            dataSource: NewsApiService(
+                                networkClient: NetworClient()
+                            )
+                        )
+                    )
+                )
+            )
     }
 }
