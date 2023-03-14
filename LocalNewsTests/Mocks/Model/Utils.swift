@@ -9,6 +9,7 @@ extension Array where Element == HeadlineEntity {
         publishedAt: Date(),
         article: ArticleEntity(
             urlPath: "url",
+            imageUrlPath: "",
             title: "title",
             content: "content"
         )
@@ -20,6 +21,7 @@ extension Array where Element == HeadlineEntity {
         publishedAt: Date(),
         article: ArticleEntity(
             urlPath: "url_2",
+            imageUrlPath: "",
             title: "title_2",
             content: "content_2"
         )
@@ -31,6 +33,7 @@ extension Array where Element == HeadlineEntity {
         publishedAt: Date(),
         article: ArticleEntity(
             urlPath: "url_3",
+            imageUrlPath: "",
             title: "title_3",
             content: "content_3"
         )

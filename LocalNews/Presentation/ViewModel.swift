@@ -2,12 +2,12 @@ import Foundation
 
 @MainActor
 class ViewModel: ObservableObject {
-    @Published var headlines = [Headline]()
+    @Published private(set) var headlines = [Headline]()
     @Published var errorDidOccurr = false
     
-    var errorMessage: String {
+    private var _errorMessage: String {
         didSet {
-            errorDidOccurr = errorMessage == "" ? false : true
+            errorDidOccurr = _errorMessage == "" ? false : true
         }
     }
     
@@ -16,13 +16,13 @@ class ViewModel: ObservableObject {
     
     init(useCase: any NewsUseCaseProtocol) {
         newsUseCase = useCase
-        errorMessage = ""
+        _errorMessage = ""
         dateFormatter = RelativeDateTimeFormatter()
         dateFormatter.unitsStyle = .short
     }
     
     func fetchHeadlines(parameters: [String: String] = [
-        "language": "fr"
+        "language": "en"
     ]) {
         Task {
             let result = await newsUseCase.fetchHeadlines(
@@ -45,10 +45,14 @@ class ViewModel: ObservableObject {
                         article: headline.article.convertToPresentation()
                     )
                 }
-                self.errorMessage = ""
+                self._errorMessage = ""
             case .failure(let error):
-                self.errorMessage = error.description
+                self._errorMessage = error.description
             }
         }
+    }
+    
+    func errorMessage() -> String {
+        _errorMessage
     }
 }

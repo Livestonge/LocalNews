@@ -6,7 +6,7 @@ struct NewsView: View {
     private let content: String
     
     init(article: Article) {
-        imageUrlPath = article.urlPath
+        imageUrlPath = article.imageUrlPath
         title = article.title
         content = article.content
     }

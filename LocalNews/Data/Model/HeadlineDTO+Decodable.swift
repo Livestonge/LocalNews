@@ -50,6 +50,7 @@ No content available, please visit the source website to read more
         
         article = ArticleDTO(
             urlPath: url,
+            imageUrlPath: imageUrlPath,
             title: title,
             content: content
         )

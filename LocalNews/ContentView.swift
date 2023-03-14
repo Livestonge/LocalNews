@@ -5,7 +5,7 @@ struct ContentView: View {
     
     var body: some View {
             NavigationStack {
-                List(viewModel.headlines) {  headline in
+                List(viewModel.headlines) { headline in
                     NavigationLink(
                         destination: NewsView(
                             article: headline.article
@@ -16,7 +16,7 @@ struct ContentView: View {
                 }
             }
             .alert(
-                viewModel.errorMessage,
+                viewModel.errorMessage(),
                 isPresented: $viewModel.errorDidOccurr
             ) {
                 Button("OK", role: .cancel) {}
