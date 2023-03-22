@@ -4,8 +4,10 @@ import XCTest
 final class NewsApiServiceTest: XCTestCase {
     
     func testNewsApiServiceWithEmptyReturn() async {
+        let mock = NetworkClientProtocolMock()
+        mock.executeRequestReturnValue = .success(emptyArticles)
         let sut = NewsApiService(
-            networkClient: MockNetworkClientWhenReturnIsEmpty()
+            networkClient: mock
         )
         let result = await sut.fetchHeadlines(parameters: ["language":"fr"])
         
@@ -19,8 +21,10 @@ final class NewsApiServiceTest: XCTestCase {
     }
     
     func testNonEmptyReturn() async {
+        let mock = NetworkClientProtocolMock()
+        mock.executeRequestReturnValue = .success(data)
         let sut = NewsApiService(
-            networkClient: MockNetworkClientWhenReturnIsNotEmpty()
+            networkClient: mock
         )
         let result = await sut.fetchHeadlines(parameters: ["language":"fr"])
         
@@ -35,8 +39,10 @@ final class NewsApiServiceTest: XCTestCase {
     }
     
     func testFailureCase() async {
+        let mock = NetworkClientProtocolMock()
+        mock.executeRequestReturnValue = .failure(.badConnexion)
         let sut = NewsApiService(
-            networkClient: MockNetworkClientWhenReturnIsFailure()
+            networkClient: mock
         )
         let result = await sut.fetchHeadlines(parameters: ["language":"fr"])
         

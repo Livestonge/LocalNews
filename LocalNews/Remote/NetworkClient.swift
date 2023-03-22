@@ -1,5 +1,6 @@
 import Foundation
 
+// sourcery: AutoMockable
 protocol NetworkClientProtocol {
     func execute(request: URLRequest) async -> Result<Data, ResponseError>
 }

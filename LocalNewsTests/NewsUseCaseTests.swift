@@ -4,8 +4,10 @@ import XCTest
 final class NewsUseCaseTests: XCTestCase {
     
     func testEmptyListCase() async {
+        let mock = FetchNewsRepositoryProtocolMock()
+        mock.fetchHeadlinesParametersReturnValue = .success([])
         let sut = NewsUseCase(
-            fetchNewsRepository: MockFetchNewsRepositoryWhenReturnIsEmpty()
+            fetchNewsRepository: mock
         )
         
         let result = await sut.fetchHeadlines(
@@ -22,8 +24,10 @@ final class NewsUseCaseTests: XCTestCase {
     }
     
     func testNonEmptyListCase() async {
+        let mock = FetchNewsRepositoryProtocolMock()
+        mock.fetchHeadlinesParametersReturnValue = .success(.nonEmpty)
         let sut = NewsUseCase(
-            fetchNewsRepository: MockFetchNewsRepositoryWhenReturnIsNotEmpty()
+            fetchNewsRepository: mock
         )
         
         let result = await sut.fetchHeadlines(
@@ -41,8 +45,10 @@ final class NewsUseCaseTests: XCTestCase {
     }
     
     func testFailureCase() async {
+        let mock = FetchNewsRepositoryProtocolMock()
+        mock.fetchHeadlinesParametersReturnValue = .failure(.networkError)
         let sut = NewsUseCase(
-            fetchNewsRepository: MockFetchNewsRepositoryWhenReturnIsFailure()
+            fetchNewsRepository: mock
         )
         
         let result = await sut.fetchHeadlines(

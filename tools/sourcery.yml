@@ -1,0 +1,13 @@
+configurations:
+- sources: 
+    - ../LocalNews
+  templates: 
+    - ./Templates
+  output:
+    path: ../LocalNewsTests/Sourcery
+    link:
+      project: ../LocalNews.xcodeproj
+      target: LocalNewsTests
+      group: LocalNewsTests/Sourcery
+  args: 
+    testableImport: "LocalNews" 
